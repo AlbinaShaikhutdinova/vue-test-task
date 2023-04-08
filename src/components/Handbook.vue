@@ -1,11 +1,10 @@
 <template>
   <div class="handbook" :class="isSelectActive ? 'open' : ''">
-    <input
-      type="text"
-      @click="setListState(true)"
-      @focus="setListState(true)"
+    <HandbookInput
       class="handbook__input"
       :value="activeItem.description"
+      :title="title"
+      @focus="setListState(true)"
     />
     <HandbookList
       class="handbook__list"
@@ -19,10 +18,12 @@
 </template>
 <script>
 import HandbookList from './HandbookList.vue';
+import HandbookInput from './HandbookInput.vue';
 export default {
   name: 'HandBook',
   components: {
     HandbookList,
+    HandbookInput,
   },
   props: {
     title: String,
@@ -59,6 +60,9 @@ export default {
   width: 100%;
   position: relative;
   z-index: 1;
+  font-size: 14px;
+  color: #333333;
+  font-family: arial, Helvetica, sans-serif;
   &__input {
     width: 100%;
   }

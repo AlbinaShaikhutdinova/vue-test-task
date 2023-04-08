@@ -48,15 +48,15 @@ export default {
   }
   &__title {
     position: relative;
-    padding-right: calc(1.2em + 5px);
+    padding-right: calc(1em + 5px);
     font-weight: 600;
     cursor: auto;
   }
   &__close {
     position: absolute;
     display: block;
-    width: 1.2em;
-    height: 1.2em;
+    width: 1em;
+    height: 1em;
     top: 50%;
     right: 5px;
     transform: translateY(-50%);

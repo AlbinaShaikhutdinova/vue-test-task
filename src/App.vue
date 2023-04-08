@@ -1,5 +1,8 @@
 <template>
-  <HandBook title="Статус поставки" :items="dataSet1" v-model:active-item="dataSetAcive1" />
+  <div class="container">
+    <HandBook title="Статус поставки" :items="dataSetStatus" v-model:active-item="activeStatus" />
+    <HandBook title="Режим перемещения" :items="dataSetMode" v-model:active-item="activeMode" />
+  </div>
 </template>
 
 <script>
@@ -12,7 +15,7 @@ export default {
   },
   data() {
     return {
-      dataSet1: [
+      dataSetStatus: [
         {
           code: 0,
           description: 'Формируется',
@@ -38,11 +41,24 @@ export default {
           description: 'Поставка закрыта',
         },
       ],
-      dataSetAcive1: null,
+      dataSetMode: [
+        {
+          id: 1,
+          description: 'Импорт',
+        },
+        {
+          id: 2,
+          description: 'Экспорт',
+        },
+      ],
+
+      activeStatus: null,
+      activeMode: null,
     };
   },
   created() {
-    this.dataSetAcive1 = { ...this.dataSet1[0] };
+    this.activeStatus = { ...this.dataSetStatus[0] };
+    this.activeMode = { ...this.dataSetMode[0] };
   },
 };
 </script>
@@ -50,5 +66,10 @@ export default {
 <style>
 * {
   box-sizing: border-box;
+}
+.container {
+  padding: 40px;
+  display: flex;
+  gap: 20px;
 }
 </style>

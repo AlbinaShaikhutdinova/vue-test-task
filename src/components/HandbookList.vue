@@ -6,7 +6,7 @@
     <li
       v-for="item in items"
       @click="handleOnItemClick(item)"
-      :key="item.code"
+      :key="item.description"
       class="handbook-list__item"
     >
       {{ item.description }}
@@ -37,7 +37,6 @@ export default {
   margin: 0;
   padding: 0;
   box-shadow: 0px 8px 10px 2px rgba(34, 60, 80, 0.2);
-  overflow-y: scroll;
   &__item {
     padding: 5px;
     border-bottom: 2px solid #cfcfcf;
@@ -48,7 +47,7 @@ export default {
   }
   &__title {
     position: relative;
-    padding-right: calc(1em + 5px);
+    padding-right: calc(1em + 10px);
     font-weight: 600;
     cursor: auto;
   }

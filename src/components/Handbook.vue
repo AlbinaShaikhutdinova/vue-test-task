@@ -13,8 +13,8 @@
       @itemClick="updateActiveItem"
       @close="setListState(false)"
     />
+    <div @click="setListState(false)" class="handbook__layover"></div>
   </div>
-  <div @click="setListState(false)" class="handbook__layover"></div>
 </template>
 <script>
 import HandbookList from './HandbookList.vue';
@@ -58,8 +58,6 @@ export default {
 .handbook {
   max-width: 260px;
   width: 100%;
-  position: relative;
-  z-index: 1;
   font-size: 14px;
   color: #333333;
   font-family: arial, Helvetica, sans-serif;
@@ -67,10 +65,14 @@ export default {
     width: 100%;
   }
   &__list {
+    position: relative;
+    z-index: 2;
     display: none;
-    width: 100%;
+    width: fit-content;
+    min-width: 100px;
     max-height: 160px;
     transform: translateY(5px);
+    overflow-y: auto;
   }
   &__layover {
     display: none;
@@ -80,10 +82,11 @@ export default {
     right: 0;
     bottom: 0;
     width: 100%;
-    z-index: 0;
+    z-index: 1;
+    background-color: transparent;
   }
   &.open &__list,
-  &.open + &__layover {
+  &.open &__layover {
     display: block;
   }
 }

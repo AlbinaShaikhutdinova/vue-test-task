@@ -30,6 +30,7 @@ export default {
 .handbook-input {
   position: relative;
   width: 100%;
+  z-index: 0;
   &__title {
     position: absolute;
     top: 5px;
@@ -37,6 +38,7 @@ export default {
     font-size: 12px;
     font-weight: 700;
     display: block;
+    z-index: 0;
   }
   &__element {
     padding: 20px 5px 5px;

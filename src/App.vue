@@ -47,4 +47,8 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+* {
+  box-sizing: border-box;
+}
+</style>
